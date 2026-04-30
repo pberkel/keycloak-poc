@@ -1,0 +1,19 @@
+:root {
+    --keycloak-logo-url: url('../img/adventist-technology.svg');
+    --keycloak-logo-height: 86px;
+    --keycloak-logo-width: 300px;
+}
+
+div.kc-logo-text {
+    background-image: var(--keycloak-logo-url);
+    height: var(--keycloak-logo-height);
+    width: var(--keycloak-logo-width);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+}
+
+div.kc-logo-text span {
+    display: none;
+}

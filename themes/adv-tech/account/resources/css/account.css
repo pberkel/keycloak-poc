@@ -1,4 +1,6 @@
-/* adv-tech account theme
- * Overrides applied on top of the parent keycloak.v3 theme.
- * Add custom styles here.
- */
+/* Replace the masthead logo with the Adventist Technology brand */
+.pf-v5-c-masthead .pf-v5-c-brand {
+    content: url("../img/adventist-technology.svg");
+    height: 40px;
+    width: auto;
+}
