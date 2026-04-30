@@ -1,14 +1,1 @@
-/* Replace the masthead logo with the Adventist Technology brand */
-.pf-v5-c-masthead__brand a {
-    display: block;
-    width: 200px;
-    height: 40px;
-    background-image: url("../img/adventist-technology.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left center;
-}
-
-.pf-v5-c-masthead__brand a img {
-    display: none;
-}
+/* adv-tech account theme overrides */
