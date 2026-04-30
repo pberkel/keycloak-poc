@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: keycloak
+  namespace: keycloak-poc
   labels:
     app: keycloak
 spec:
@@ -18,6 +19,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: keycloak
+  namespace: keycloak-poc
   labels:
     app: keycloak
 spec:
@@ -113,6 +115,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-data
+  namespace: keycloak-poc
   labels:
     app: postgres
 spec:
@@ -126,6 +129,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  namespace: keycloak-poc
   labels:
     app: postgres
 spec:
@@ -169,6 +173,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres
+  namespace: keycloak-poc
   labels:
     app: postgres
 spec:

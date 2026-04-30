@@ -10,6 +10,7 @@ RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:26.6.1
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
+COPY themes/adv-tech /opt/keycloak/themes/adv-tech
 
 # Runtime configuration (KC_DB_URL, KC_DB_USERNAME, KC_DB_PASSWORD, KC_HOSTNAME,
 # KC_BOOTSTRAP_ADMIN_USERNAME, KC_BOOTSTRAP_ADMIN_PASSWORD) must be provided
