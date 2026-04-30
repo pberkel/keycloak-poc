@@ -1,0 +1,35 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: account-redirect
+  namespace: keycloak-poc
+spec:
+  redirectRegex:
+    regex: ^https://keycloak-poc\.pjberkel\.com/account(/.*)?$
+    replacement: https://keycloak-poc.pjberkel.com/realms/adv-tech/account/
+    permanent: false
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak-account-redirect
+  namespace: keycloak-poc
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
+    traefik.ingress.kubernetes.io/router.middlewares: keycloak-poc-account-redirect@kubernetescrd
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - keycloak-poc.pjberkel.com
+  rules:
+    - host: keycloak-poc.pjberkel.com
+      http:
+        paths:
+          - path: /account
+            pathType: Prefix
+            backend:
+              service:
+                name: keycloak
+                port:
+                  number: 8080
