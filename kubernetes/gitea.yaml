@@ -43,6 +43,10 @@ spec:
               value: "true"
             - name: GITEA__security__INSTALL_LOCK
               value: "true"
+            - name: GITEA__service__DISABLE_REGISTRATION
+              value: "false"
+            - name: GITEA__service__ALLOW_ONLY_EXTERNAL_REGISTRATION
+              value: "true"
           volumeMounts:
             - name: data
               mountPath: /data
